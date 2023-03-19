@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta name="google-signin-client_id" content="533965148281-oboi50ihru7smbjs5ds72ljku7cek8ee.apps.googleusercontent.com">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+  </head>
+  <body>
+    <div id="g_id_onload"
+         data-client_id="533965148281-oboi50ihru7smbjs5ds72ljku7cek8ee.apps.googleusercontent.com"
+         data-context="signin"
+         data-auto_prompt="false"
+         data-ux_mode="popup"
+         data-callback="handleCredentialResponse">
+    </div>
+
+
+    <div class="g_id_signin"
+         data-type="standard"
+         data-shape="pill"
+         data-theme="filled_blue"
+         data-text="signin_with"
+         data-size="large"
+         data-logo_alignment="left">
+    </div>
+
+    <script>
+      function handleCredentialResponse(response) {
+        const responcePayload = decodeJwtResponse(response.credential);
+          const name = responcePayload.name
+          const id = responcePayload.sub
+
+          console.log("ID: " + responcePayload.sub)
+          console.log("Full Name: " + responcePayload.name)
+          console.log(responcePayload)
+          console.log(name)
+          window.open(`/questions?id=${id}`,"_self")
+
+      }
+
+      function decodeJwtResponse(data){
+        var tokens = data.split(".")
+        return JSON.parse(atob(tokens[1]));
+      }
+    </script>
+  </body>
+</html>

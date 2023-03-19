@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>quest</h1>
+    <form method="POST">
+        {% for question_id, question in questions.items() %}
+        <p>{{ question.text }}</p>
+        {% for option in question.options %}
+        <input type="radio" name="{{ question_id }}" value="{{ option }}"> {{ option }}<br>
+        {% endfor %}
+        {% endfor %}
+        <input type="submit" value="Submit">
+    </form>
+  </body>
+</html>
