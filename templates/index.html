@@ -2,12 +2,101 @@
 <html lang="">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Free Tea</title>
+    <style>
+body, html {
+  background-color: burlywood;
+  height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bg-image {
+  /* The image used */
+  background-image: url("tea3.jpg");
+  
+  /* Add the blur effect */
+  filter: blur(8px);
+  -webkit-filter: blur(4px);
+  
+  /* Full height */
+  height: 100%; 
+  
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Position text in the middle of the page/image */
+.bg-text {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+}
+a{
+  color: lightgray;
+}
+</style>
+</style>
   </head>
+
   <body>
+
+
+<div class="bg-image"></div>
+
+<div class="bg-text">
+  <h2>A Place Where You Give Your Opinion That Matters</h2>
+  <h1 style="font-size:50px">Chai The People</h1>
+  <p>Empowering the State with a Free Cup of Tea</p>
+  <a href="/login">login</a>
+<!--     <a href="/questions">questions</a>
+    <a href="/add_question">add question</a>
+ -->
+</div>
+
+
+    <!-- <div class="hero-image">
+      <div class="hero-text">
+        <h1 style="font-size:50px">Chai The People</h1>
+        <p>Empowering the State with Free Cup of Tea</p>
+        <button>Get A Free Tea</button>
+
+      </div>
+    </div>
     <header>Test page</header>
     <a href="/login">login</a>
     <a href="/questions">questions</a>
+    <a href="/add_question">add question</a> -->
+
+    <h1 style="text-align: center; padding: 10%;">Welcome to our innovative app, where we are bringing a new revolution to the Indian market</h1>
+
+    <p style="text-align: center; font-size: 60px;">
+      <a href="/login">login</a>
+    <a href="/questions">questions</a>
+    <a href="/add_question">add question</a> 
+    </p>
+
+    <h2 style="text-align: center; padding: 10%;">
+    <img src="cup.png">
+      What is the one thing that connects us all? It is the love for tea, right? Well, imagine if we told you that you can get a cup of tea for free while also empowering the state's economic development. Sounds like a win-win situation, right?
+    </h2>
+    
 
   </body>
 </html>
