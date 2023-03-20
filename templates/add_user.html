@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+
+ #google_translate_element select{
+ background:#f6edfd;
+ color:#383ffa;
+ border: none;
+ border-radius:3px;
+ padding:6px 8px
+ }
+ 
+ /*google translate link | logo */
+   .goog-logo-link,.goog-te-gadget span,div#goog-gt-{
+   display:none!important;
+   }
+ .goog-te-gadget{
+   color:transparent!important;
+   font-size:0;
+ }
+ 
+ /* google translate banner-frame */
+ 
+ .goog-te-banner-frame{
+ display:none !important;
+ }
+ 
+ #goog-gt-tt, .goog-te-balloon-frame{display: none !important;}
+.goog-text-highlight { background: none !important; box-shadow: none !important;}
+ 
+/* body{top:0!important;}*/
+
+
+
+
+
+
+
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+  </head>
+  <body>
+      <form method="POST">
+      <label for="name">Name:</label>
+      <input name="name" id="name"> <br>
+      <label for="age">age:</label>
+      <input name="age" id="age"> <br>
+      <label for="annual_income">annual_income:</label>
+      <input name="annual_income" id="annual_income"> <br>
+      <label for="city">city:</label>
+      <input name="city" id="city"> <br>
+      <p>Gender:</p>
+       <input type="radio" id="male" name="gender" value="Male">
+       <label for="male">Male</label><br>
+       <input type="radio" id="female" name="gender" value="Female">
+       <label for="female">Female</label><br>
+       <input type="radio" id="other" name="gender" value="Other">
+       <label for="javascript">Other</label> <br>
+      <p>Marital Status:</p>
+       <input type="radio" id="Married" name="marital status" value="Married">
+       <label for="Married">Married</label><br>
+       <input type="radio" id="Single" name="marital status" value="Single">
+       <label for="Single">Single</label><br>
+
+      <p>Qualification:</p>
+       <input type="radio" id="10th pass" name="qualification" value="10th pass">
+       <label for="10th pass">10th pass</label><br>
+       <input type="radio" id="12th pass" name="qualification" value="12th pass">
+       <label for="12th pass">12th pass</label><br>
+       <input type="radio" id="graduated" name="qualification" value="graduated">
+       <label for="graduated">graduated</label><br>
+       <input type="radio" id="No Qualification" name="qualification" value="No Qualification">
+       <label for="No Qualification">No Qualification</label><br>
+
+
+       <p>Occupation:</p>
+       <input type="radio" id="Employed" name="occupation" value="Employed">
+       <label for="Employed">Employed</label><br>
+       <input type="radio" id="Unemployed" name="occupation" value="Unemployed">
+       <label for="Unemployed">Unemployed</label><br>
+       <input type="radio" id="Self Employed" name="occupation" value="Self Employed">
+       <label for="Self Employed">Self Employed</label><br>
+       <input type="radio" id="Student" name="occupation" value="Student">
+       <label for="Student">Student</label><br>
+
+      <input type="submit" id="submit">
+    </form>
+
+        <div id="google_translate_element"></div>
+
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement(
+        {pageLanguage: 'en',
+        includedLanguages:'hi,en,bn'},
+        'google_translate_element',
+      );
+    }
+  </script>
+
+  <script type="text/javascript"
+      src=
+"https://translate.google.com/translate_a/element.js?
+cb=googleTranslateElementInit">
+  </script>
+  </body>
+</html>
