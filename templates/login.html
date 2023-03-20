@@ -3,8 +3,23 @@
   <head>
     <meta name="google-signin-client_id" content="533965148281-oboi50ihru7smbjs5ds72ljku7cek8ee.apps.googleusercontent.com">
     <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <style type="text/css">
+      .hide{
+        display: none;
+      } 
+    </style>
   </head>
   <body>
+    <p>New User?</p>
+    <form action="/action_page.php">
+  <input type="radio" name="new" onclick="myFunction(this.value)" value="yes">Yes<br>
+  <input type="radio" name="new" onclick="myFunction(this.value)" value="no">No<br>
+  
+  <input class="hide" type="text" id="result">
+  <input class="hide" type="submit" value="Submit form">
+
+</form>
+
     <div id="g_id_onload"
          data-client_id="533965148281-oboi50ihru7smbjs5ds72ljku7cek8ee.apps.googleusercontent.com"
          data-context="signin"
@@ -24,17 +39,28 @@
     </div>
 
     <script>
+      function myFunction(browser) {
+  document.getElementById("result").value = browser;
+  const chk = document.getElementById("result").value = browser;
+  console.log(chk)
+}
+
+
       function handleCredentialResponse(response) {
         const responcePayload = decodeJwtResponse(response.credential);
           const name = responcePayload.name
           const id = responcePayload.sub
-
+          const chk = document.getElementById("result").value;
           console.log("ID: " + responcePayload.sub)
           console.log("Full Name: " + responcePayload.name)
           console.log(responcePayload)
           console.log(name)
-          window.open(`/questions?id=${id}`,"_self")
-
+          if (chk == 'no') {
+            window.open(`/questions?id=${id}`,"_self")
+          }
+          else{
+            window.open(`/add_user?id=${id}`,"_self")
+          }
       }
 
       function decodeJwtResponse(data){
