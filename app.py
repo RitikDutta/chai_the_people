@@ -68,7 +68,32 @@ def add_user():
     return render_template('add_user.html')
 
 
+@app.route("/user_chart")
+def show_tables2():
+    crud = CassandraCRUD("test_key")
+    data = crud.get_db("user")
+    data.set_index(['user_id'], inplace=True)
+    data.index.name=None
+    return render_template('user_chart.html',tables=[data.to_html()],
+    titles = ["User Activity"])
 
+@app.route("/questions_chart")
+def show_tables3():
+    crud = CassandraCRUD("test_key")
+    data = crud.get_db("survey")
+    # data.set_index(['user_id'], inplace=False)
+    data.index.name=None
+    return render_template('questions_chart.html',tables=[data.to_html()],
+    titles = ["questions_chart"])
+
+@app.route("/responses_chart")
+def show_tables4():
+    crud = CassandraCRUD("test_key")
+    data = crud.get_db("response")
+    data.set_index(['user_id'], inplace=True)
+    data.index.name=None
+    return render_template('responses_chart.html',tables=[data.to_html()],
+    titles = ["responses_chart"])
 
 
 
@@ -130,4 +155,4 @@ def survey():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=8080)
