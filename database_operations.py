@@ -64,7 +64,7 @@ class CassandraCRUD:
         date_added, 
         question,
         options
-        ) VALUES ('{}', '{}', '{}', '{}')""".format(question_id, date_added, question, options)
+        ) VALUES ({}, '{}', '{}', '{}')""".format(question_id, date_added, question, options)
         self.session.execute(insert_query)
         print(tabulate(self.get_db("survey"), headers='keys', tablefmt='plain'))
 
