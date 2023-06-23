@@ -38,11 +38,26 @@
          data-logo_alignment="left">
     </div>
 
+
+
+    <p>If you don't want to login with your google you can click here to login with demo account</p>
+    <button onclick="demoUser()">Click me</button>
+
     <script>
       function myFunction(browser) {
   document.getElementById("result").value = browser;
   const chk = document.getElementById("result").value = browser;
   console.log(chk)
+}
+
+function demoUser(){
+  const chk = document.getElementById("result").value;
+  if (chk == 'no') {
+            window.open(`/questions?id=115211234`,"_self")
+          }
+          else{
+            window.open(`/add_user?id=115211234`,"_self")
+          }
 }
 
 
